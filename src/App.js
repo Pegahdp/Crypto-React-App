@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { ThemeProvider } from "./contex/ThemeContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import CoinPage from "./routes.jsx/CoinPage";
 import Home from "./routes.jsx/Home";
 import Footer from "./components/Footer";
