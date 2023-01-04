@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./contex/ThemeContext";
+import CoinPage from "./routes.jsx/CoinPage";
 import Home from "./routes.jsx/Home";
+import Footer from "./components/Footer";
 import Signin from "./routes.jsx/Signin";
 import Signup from "./routes.jsx/Signup";
 import Account from "./routes.jsx/Account";
@@ -30,7 +32,11 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/account" element={<Account />} />
+        <Route path= "/coin/:coinId" element={<CoinPage />}>
+          <Route path=":coinId" />
+        </Route>
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 }
