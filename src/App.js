@@ -9,6 +9,7 @@ import Signup from "./routes.jsx/Signup";
 import Account from "./routes.jsx/Account";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { AuthContextProvider } from "./context/AuthContext";
 function App() {
   const [coins, setCoins] = useState([]);
   const url =
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <ThemeProvider>
+      <AuthContextProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home coins={coins} />} />
@@ -37,6 +39,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }
